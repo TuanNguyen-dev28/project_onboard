@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "name": "European Cup / Champions League",
+    "quantity": 3,
+    "wins": [
+      { "year": 1968, "coach": "Matt Busby" },
+      { "year": 1999, "coach": "Alex Ferguson" },
+      { "year": 2008, "coach": "Alex Ferguson" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "UEFA Europa League",
+    "quantity": 1,
+    "wins": [
+      { "year": 2017, "coach": "José Mourinho" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "European Cup Winners' Cup",
+    "quantity": 1,
+    "wins": [
+      { "year": 1991, "coach": "Alex Ferguson" }
+    ]
+  }
+]
