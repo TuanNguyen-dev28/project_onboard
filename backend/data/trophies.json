@@ -13,16 +13,26 @@
     "id": 2,
     "name": "UEFA Europa League",
     "quantity": 1,
-    "wins": [
-      { "year": 2017, "coach": "José Mourinho" }
-    ]
+    "wins": [{ "year": 2017, "coach": "José Mourinho" }]
   },
   {
     "id": 3,
-    "name": "European Cup Winners' Cup",
-    "quantity": 1,
+    "name": "Premier League",
+    "quantity": 13,
     "wins": [
-      { "year": 1991, "coach": "Alex Ferguson" }
+      { "year": 1993, "coach": "Alex Ferguson" },
+      { "year": 1994, "coach": "Alex Ferguson" },
+      { "year": 1996, "coach": "Alex Ferguson" },
+      { "year": 1997, "coach": "Alex Ferguson" },
+      { "year": 1999, "coach": "Alex Ferguson" },
+      { "year": 2000, "coach": "Alex Ferguson" },
+      { "year": 2001, "coach": "Alex Ferguson" },
+      { "year": 2003, "coach": "Alex Ferguson" },
+      { "year": 2007, "coach": "Alex Ferguson" },
+      { "year": 2008, "coach": "Alex Ferguson" },
+      { "year": 2009, "coach": "Alex Ferguson" },
+      { "year": 2011, "coach": "Alex Ferguson" },
+      { "year": 2013, "coach": "Alex Ferguson" }
     ]
   }
 ]

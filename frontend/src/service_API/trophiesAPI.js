@@ -1,22 +1,22 @@
-const API_URL = 'http://localhost:5000/api';
+const API_URL = "http://localhost:5000/api";
 
-async function getTrophies() {
-    const response = await fetch(`${API_URL}/trophies`);
+export async function getTrophies() {
+  const response = await fetch(`${API_URL}/trophies`);
 
-    if (!response.ok) {
-        throw new Error('Failed to fetch trophies');
-    }
+  if (!response.ok) {
+    throw new Error("Failed to fetch trophies");
+  }
 
-    const trophies = await response.json();
-    return trophies;
+  const trophies = await response.json();
+  return trophies;
 }
 
 export async function getTrophyById(id) {
-    const response = await fetch(`${API_URL}/trophies/${id}`);
-    
-    if (!response.ok) {
-        throw new Error('Failed to fetch trophy');
-    }
+  const response = await fetch(`${API_URL}/trophies/${id}`);
 
-    return response.json();
+  if (!response.ok) {
+    throw new Error("Failed to fetch trophy");
+  }
+
+  return response.json();
 }
