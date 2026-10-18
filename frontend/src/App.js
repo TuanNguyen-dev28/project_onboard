@@ -2,6 +2,7 @@ import { NavLink, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Catalogue from "./pages/catalogue";
+import CatalogueDetails from "./pages/catalogueDetails";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/catalogue" element={<Catalogue />} />
+        <Route path="/catalogue/:id" element={<CatalogueDetails />} />
       </Routes>
     </>
   );

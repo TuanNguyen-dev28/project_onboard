@@ -3,6 +3,7 @@
     "id": 1,
     "name": "European Cup / Champions League",
     "quantity": 3,
+    "category": "europe",
     "wins": [
       { "year": 1968, "coach": "Matt Busby" },
       { "year": 1999, "coach": "Alex Ferguson" },
@@ -13,11 +14,13 @@
     "id": 2,
     "name": "UEFA Europa League",
     "quantity": 1,
+    "category": "europe",
     "wins": [{ "year": 2017, "coach": "José Mourinho" }]
   },
   {
     "id": 3,
     "name": "Premier League",
+    "category": "domestic",
     "quantity": 13,
     "wins": [
       { "year": 1993, "coach": "Alex Ferguson" },

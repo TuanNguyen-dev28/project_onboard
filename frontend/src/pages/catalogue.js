@@ -1,34 +1,58 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getTrophies } from "../service_API/trophiesAPI";
 const trophyImages = {
   1: "/img/CUPC1.jpg",
   2: "/img/europa.jpg",
   3: "/img/PLcup.jpg",
 };
+const categories = [
+  { value: "all", label: "Tất cả" },
+  { value: "domestic", label: "Trong nước" },
+  { value: "europe", label: "Châu Âu" },
+];
 
 function Catalogue() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [trophies, setTrophies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchTrophies = async () => {
-      try {
-        const response = await getTrophies();
-        setTrophies(response);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+    let ignore = false;
 
-    fetchTrophies();
-  }, []);
+    async function loadTrophies() {
+      setLoading(true);
+      setError("");
+
+      try {
+        const result = await getTrophies(selectedCategory);
+
+        if (!ignore) {
+          setTrophies(result);
+        }
+      } catch (error) {
+        if (!ignore) {
+          setError(error.message);
+        }
+      } finally {
+        if (!ignore) {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadTrophies();
+
+    return () => {
+      ignore = true;
+    };
+  }, [selectedCategory]);
 
   if (loading) {
     return <p>Đang tải danh hiệu...</p>;
   }
+
   if (error) {
     return <p role="alert">{error}</p>;
   }
@@ -38,6 +62,30 @@ function Catalogue() {
         <h1>Bộ sưu tập danh hiệu</h1>
         <p>Những dấu mốc làm nên lịch sử Manchester United</p>
       </header>
+
+      <div
+        className="catalogue-filters"
+        role="group"
+        aria-label="Phân loại danh hiệu"
+      >
+        {categories.map((category) => (
+          <button
+            key={category.value}
+            type="button"
+            className={
+              selectedCategory === category.value
+                ? "filter-button active"
+                : "filter-button"
+            }
+            aria-pressed={selectedCategory === category.value}
+            onClick={() => setSelectedCategory(category.value)}
+          >
+            {category.label}
+          </button>
+        ))}
+      </div>
+
+      {trophies.length === 0 && <p>Chưa có danh hiệu thuộc phân loại này.</p>}
 
       <div className="trophy-list">
         {trophies.map((item) => (
@@ -60,17 +108,9 @@ function Catalogue() {
                 </p>
               )}
 
-              <details className="trophy-details">
-                <summary>Xem chi tiết</summary>
-
-                <ul>
-                  {item.wins.map((win) => (
-                    <li key={win.year}>
-                      <strong>{win.year}</strong> — {win.coach}
-                    </li>
-                  ))}
-                </ul>
-              </details>
+              <Link to={`/catalogue/${item.id}`} className="detail-link">
+                Xem chi tiết →
+              </Link>
             </div>
           </article>
         ))}

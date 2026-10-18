@@ -160,3 +160,56 @@
     min-height: auto;
   }
 }
+.catalogue-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: 1px solid #d1d5db;
+  border-radius: 24px;
+  background: #fff;
+  color: #374151;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  border-color: #da001b;
+  color: #da001b;
+}
+
+.filter-button.active {
+  background: #da001b;
+  border-color: #da001b;
+  color: #fff;
+}
+.detail-link {
+  display: block;
+  padding: 12px;
+  border-radius: 8px;
+  background: #da001b;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.detail-link:hover {
+  background: #b80017;
+}
+
+.trophy-detail {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 14px;
+}
+
+.trophy-detail li {
+  margin-bottom: 12px;
+}
