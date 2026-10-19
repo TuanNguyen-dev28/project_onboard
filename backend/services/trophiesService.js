@@ -1,4 +1,4 @@
-const trophies = require("../data/trophies.json");
+import trophies from "../data/trophies.json" with { type: "json" };
 
 function getAllTrophies(category = "all") {
   const result =
@@ -14,7 +14,4 @@ function findTrophiesById(id) {
   return trophy ? { ...trophy } : null;
 }
 
-module.exports = {
-  getAllTrophies,
-  findTrophiesById,
-};
+export { getAllTrophies, findTrophiesById };

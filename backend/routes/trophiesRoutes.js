@@ -1,10 +1,12 @@
-const exxpress = require('express');
-const router = exxpress.Router();
-const { getTrophies,
-    getTrophiesById } = require('../controllers/trophiesController');
+import express from "express";
+import {
+  getTrophies,
+  getTrophiesById,
+} from "../controllers/trophiesController.js";
 
+const router = express.Router();
 
-router.get('/trophies', getTrophies);
-router.get('/trophies/:id', getTrophiesById);
+router.get("/trophies", getTrophies);
+router.get("/trophies/:id", getTrophiesById);
 
-module.exports = router; 
+export default router;

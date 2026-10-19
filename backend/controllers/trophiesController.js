@@ -1,7 +1,7 @@
-const {
+import {
   getAllTrophies,
   findTrophiesById,
-} = require("../services/trophiesService");
+} from "../services/trophiesService.js";
 
 function getTrophies(req, res) {
   const category = req.query.category ?? "all";
@@ -22,7 +22,5 @@ function getTrophiesById(req, res) {
   }
   res.json(trophy);
 }
-module.exports = {
-  getTrophies,
-  getTrophiesById,
-};
+
+export { getAllTrophies, findTrophiesById, getTrophies, getTrophiesById };
